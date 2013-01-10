@@ -109,11 +109,9 @@ interface ItemInterface
     /**
      * Set the value to be stored in the cache
      *
-     * @param mixed $cacheValue
-     *
-     * @return ItemInterface
+     * @param mixed $value
      */
-    public function setValue($cacheValue);
+    public function setValue($value);
 
     /**
      * Get the value of the object
@@ -126,8 +124,6 @@ interface ItemInterface
      * Set the TTL value
      *
      * @param int $ttl
-     *
-     * @return ItemInterface
      */
     public function setTtl($ttl);
 
