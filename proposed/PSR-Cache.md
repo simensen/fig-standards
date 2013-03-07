@@ -225,15 +225,25 @@ interface Item
     function set($value, $ttl = null);
 
     /**
-     * Validates the current state of the item in the cache.
+     * The current state of the item represents a "cache miss."
      *
-     * Checks the validity of a cache result. If the object is good (is not a 
-     * miss, and meets all the standards set by the Implementing Library) then
-     * this function returns true.
+     * An item is considered a miss when it does not exist or has passed its
+     * expiration. Implementing Library can define additional miss conditions.
      *
      * @return bool
      */
-    function isValid();
+    function isMiss();
+
+    /**
+     * The current state of the item represents a "cache hit."
+     *
+     * An item is considered a hit when it exists and has not passed its
+     * expiration. Implementing Library can define additional conditions
+     * that may result in an existing cache item not be considered a hit.
+     *
+     * @return bool
+     */
+    function isHit();
 
     /**
      * Removes the current key from the cache.
