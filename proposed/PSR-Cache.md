@@ -239,7 +239,7 @@ interface Item
      *
      * An item is considered a hit when it exists and has not passed its
      * expiration. Implementing Library can define additional conditions
-     * that may result in an existing cache item not be considered a hit.
+     * that may result in an existing cache item not being considered a hit.
      *
      * @return bool
      */
